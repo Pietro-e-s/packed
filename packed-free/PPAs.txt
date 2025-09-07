@@ -1,0 +1,8 @@
+ppa:ubuntuhandbook1/gimp
+ppa:flexiondotorg/quickemu
+ppa:ubuntuhandbook1/vlc
+ppa:ubuntu-mozilla-security/ppa
+ppa:ubuntu-wine/ppa
+# waydroid is integrated in the code
+ppa:ichigo666/ppa
+ppa:obsproject/obs-studio

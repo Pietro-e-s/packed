@@ -1,0 +1,18 @@
+kdeconnect
+libreoffice
+gimp gegl libgexiv2-2
+blender
+gnome-shell-extension-manager
+quickemu
+quickgui
+vlc
+thunderbird
+wine
+winetricks
+waydroid
+waydroid-helper
+audacity
+obs-studio
+vim
+cheese
+brasero

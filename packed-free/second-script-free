@@ -1,0 +1,29 @@
+#!/bin/bash
+
+if zenity --question --text="Do you accept the Privacy Policy, the Readme file and the Licenses files?" --ok-label=Yes --cancel-label=No
+then
+    # user clicked "Yes"
+    break
+else
+    # user clicked "No"
+    echo "Aborting..."
+    exit
+fi
+
+
+#Clean
+echo "Cleaning..."
+sudo apt autoremove
+audo apt autopurge
+
+#Donation and quit
+if zenity --question --text="The script has finished, would you mind donating? You will get a more compete script (with auto-detection of PPAs and packages." --ok-label=Yes --cancel-label=No
+then
+    # user clicked "Yes"
+    xdg-open https://buymeacoffee.com/pietroes
+    exit;;
+else
+    # user clicked "No"
+    zenity --info \ --text="Done."
+    exit;;
+fi
