@@ -1,2 +1,3 @@
 # packed
-Easy way to configure fresh ubuntu vms
+Easy way to configure fresh ubuntu VMs
+Want to start a brand new Ubuntu vm? Extract the files of the folder in the desktop, open the programs.txt and PPAs.txt files and edit your choices, make the post-install-script-free and second-script-free files executable (put .sh, give execution permissions and run with ./). There is already a selection of free software, but you can edit it. There is an extended version and ISOs packaged with Packed under development. These files are tester previews, so use them at your own risk. The pros of this software are the automation of program installation; the possibility to install whatever software uses sudo apt-get install [package name] (or sudo apt install [package name]); the integration with PPAs: you can add them in the PPAs.txt file; the lightweight files: mainly, there are only two scripts.
