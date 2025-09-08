@@ -139,7 +139,7 @@ for url in "${urls[@]}"; do
 done
 
 #Reboot indicator and second script.
-zenity --info \ --text="The system will now reboot, execute manually the second script to finish setup"
+zenity --info \ --text="Success! The system will now reboot, execute manually the second script to finish setup".
 
 #reboot
 sudo shutdown -r now
