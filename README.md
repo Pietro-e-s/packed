@@ -21,12 +21,11 @@ Script tested with Ubuntu 24.04.3 LTS x86_64
 
 ## Notable features
 - Installs apps from a variable, user decided list
-- Installs packages from a variable, user decided list
+- Installs packages (intended: non-apps) from a variable, user decided list
 - Adds PPAs from a variable, user decided list
 - Power management using Gconf
 - Installs the most used extensions for quick personalization
 - Heavy automization of tasks
-
 
 ## Example programs
 - kdeconnect
@@ -47,6 +46,9 @@ Script tested with Ubuntu 24.04.3 LTS x86_64
 - vim
 - cheese
 - brasero
+
+## Example packages
+- git
 
 ## Example PPAs relative to above programs
 - ppa:ubuntuhandbook1/gimp
@@ -69,17 +71,37 @@ Script tested with Ubuntu 24.04.3 LTS x86_64
 - power interactive
 
 ## Example extensions
-- https://extensions.gnome.org/extension/3193/blur-my-shell/
-- https://extensions.gnome.org/extension/7266/lilypad/
-- https://extensions.gnome.org/extension/4679/burn-my-windows/
-- https://extensions.gnome.org/extension/4839/clipboard-history/
-- https://extensions.gnome.org/extension/3740/compiz-alike-magic-lamp-effect/
-- https://extensions.gnome.org/extension/3210/compiz-windows-effect/
-- https://extensions.gnome.org/extension/307/dash-to-dock/
-- https://extensions.gnome.org/extension/4648/desktop-cube/
-- https://extensions.gnome.org/extension/7083/pin-it/
-- https://extensions.gnome.org/extension/1634/resource-monitor/
-- https://extensions.gnome.org/extension/6784/wiggle/
+- Blur My Shell
+- Lilypad
+- Burn My Windows
+- Clipboard History
+- Compiz Alike Magic Lamp Effect
+- Compiz Window Effect
+- Dash To Dock
+- Desktop-Cube
+- Pin-it
+- Resource Monitor
+- Wiggle
+
+## Comparisons
+### Ubuntu Setup 3rd party software installer vs Packed
+| Setup                                     | PACKED              |
+| -------------                             | -------------              | 
+| Fixed installable app list                | **VARIABLE, User driven list**  |
+| -                                         | **Can** install packages (intended: non-apps)               | 
+| -                                         | **Can** install gnome extensions |
+| -                                         | **Can** execute power-management commands |
+
+### Cubic vs Packed
+NOTE: The aim of the two programs is different. Cubic's aim is to create custom ISOs manually from root. And it does this wonderfully! Whereas, Packed's aim is to optimize the process of qcow2 personalization, especially when done repeatedly.
+|  Cubic                                                       |  Packed  |
+|------------                                                  | ----------     |
+|Terminal-based interaction type                               | .txt-based interaction type |
+|Out-of-the-box root access                                    | Uses User's account access + sudo |
+|System cannot be used until ISO is _run_                      | System almost* completely usable during the installation process |
+
+*Functions used (such as the Terminal) by the installation process are not available.
+
 
 
 ## How to run
