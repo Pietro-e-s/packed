@@ -1,0 +1,145 @@
+#!/bin/bash
+DESKTOP=$(xdg-user-dir DESKTOP)
+##Enable sources, add PPAs and update sources:
+
+if zenity --question --text="Do you accept the Privacy Policy, the Readme file ancd the Licenses file?" --ok-label=Yes --cancel-label=No
+then
+    # user clicked "Yes"
+    break
+else
+    # user clicked "No"
+    echo "Aborting..."
+    exit
+fi
+
+echo "Enabling sources, adding PPAs and uprading sources..."
+sudo sed 's/# deb/deb/' -i /etc/apt/sources.list
+
+#waydroid
+sudo apt install curl ca-certificates -y
+curl -s https://repo.waydro.id | sudo bash
+#waydroid end
+
+
+#DESKTOP="$HOME/Desktop"
+FILE="$DESKTOP/PPAs.txt"
+
+# checking file existance
+if [[ ! -f "$FILE" ]]; then
+    echo "File $FILE not found!"
+    exit 1
+fi
+
+echo "Package installation start from $FILE ..."
+echo
+
+# Updating repositories 
+#sudo apt update
+
+# Reading file line after line
+while IFS= read -r ppa || [[ -n "$ppa" ]]; do
+    # Ignoroing blank or commented lines (#)
+    if [[ -z "$ppa" ]] || [[ "$ppa" =~ ^# ]]; then
+        continue
+    fi
+
+    echo "Installing: $ppa"
+    sudo add-apt-repository -y "$ppa"
+    echo
+done < "$FILE"
+
+sudo add-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+
+# Script to install packages from .txt
+
+# Installing base pkgs
+sudo apt-get install -y git
+
+# Setting Desktop directory
+#DESKTOP="$HOME/Desktop"
+FILE="$DESKTOP/programs.txt"
+
+# checking file existance
+if [[ ! -f "$FILE" ]]; then
+    echo "File $FILE not found!"
+    exit 1
+fi
+
+echo "Package installation start from $FILE ..."
+echo
+
+# Aggiorno repository
+#sudo apt update
+
+# Reading file line after line
+while IFS= read -r package || [[ -n "$package" ]]; do
+    # Ignoring blank or commented lines(#)
+    if [[ -z "$package" ]] || [[ "$package" =~ ^# ]]; then
+        continue
+    fi
+
+    echo "Installing: $package"
+    sudo apt-get install -y "$package"
+    echo
+done < "$FILE"
+
+#Altering power management
+echo "Installation completed! Moving on to system power management..."
+gconftool-2 --set --type string /apps/gnome-power-manager/critical_battery       shutdown
+gconftool-2 --set --type bool /apps/gnome-power-manager/battery_reduce           false
+gconftool-2 --set --type bool /apps/gnome-power-manager/idle_dim_battery         false
+gconftool-2 --set --type string /apps/gnome-power-manager/lid_ac                 blank
+gconftool-2 --set --type string /apps/gnome-power-manager/lid_battery            blank
+gconftool-2 --set --type string /apps/gnome-power-manager/sleep_computer_ac      0
+gconftool-2 --set --type string /apps/gnome-power-manager/sleep_computer_battery 0
+gconftool-2 --set --type string /apps/gnome-power-manager/power                  interactive
+
+#Setting extensions
+echo "Power management done, setting extensions..."
+urls=(
+  'https://extensions.gnome.org/extension/3193/blur-my-shell/'
+  'https://extensions.gnome.org/extension/7266/lilypad/'
+  'https://extensions.gnome.org/extension/4679/burn-my-windows/'
+  'https://extensions.gnome.org/extension/4839/clipboard-history/'
+  'https://extensions.gnome.org/extension/3740/compiz-alike-magic-lamp-effect/'
+  'https://extensions.gnome.org/extension/3210/compiz-windows-effect/'
+  'https://extensions.gnome.org/extension/307/dash-to-dock/'
+  'https://extensions.gnome.org/extension/4648/desktop-cube/'
+  'https://extensions.gnome.org/extension/7083/pin-it/'
+  'https://extensions.gnome.org/extension/1634/resource-monitor/'
+  'https://extensions.gnome.org/extension/6784/wiggle/'
+)
+
+# Loop through each URL
+for url in "${urls[@]}"; do
+  echo "url = ${url}"
+  # get package metadata
+  id=$(echo "${url}" | cut --delimiter=/ --fields=5)
+  url_pkg_metadata="https://extensions.gnome.org/extension-info/?pk=${id}"
+  # Extract data for each extension
+  uuid=$(curl -s "$url_pkg_metadata" | jq -r '.uuid' | tr -d '@')
+  latest_extension_version=$(curl -s "$url_pkg_metadata" | jq -r '.shell_version_map | to_entries | max_by(.value.version) | .value.version')
+  latest_shell_version=$(curl -s "$url_pkg_metadata" | jq -r '.shell_version_map | to_entries | max_by(.value.version) | .key')
+
+  # get  package
+  filename="${uuid}.v${latest_extension_version}.shell-extension.zip"
+  url_pkg="https://extensions.gnome.org/extension-data/${filename}"
+  wget -P /tmp "${url_pkg}"
+  # install package
+  gnome-extensions install "/tmp/${filename}"
+
+  # Print the results
+  echo "For URL: $url"
+  echo "UUID: $uuid"
+  echo "Latest extension version: $latest_extension_version"
+  echo "Latest shell version: $latest_shell_version"
+  echo "--------------------------------------"
+done
+
+#Reboot indicator and second script.
+zenity --info \ --text="The system will now reboot, execute manually the second script to finish setup"
+
+#reboot
+sudo shutdown -r now
