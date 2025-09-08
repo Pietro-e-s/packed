@@ -15,9 +15,11 @@ https://buymeacoffee.com/pietroes
 ---------------------
 
 
-IMPORTANT NOTE: the code in this GitHub page, the extra function and the ISO are still under testing! The ISO and the extra function are in the early stages (of testing)!Use at your own risk!
+IMPORTANT NOTE: The code in this GitHub page, the extra function and the ISO are still under testing! The ISO and the extra function are in the early stages (of testing)!Use at your own risk!
 
 Script tested with Ubuntu 24.04.3 LTS x86_64
+
+IMPORTANT NOTE: post-install-script-donation overwrites the existing PPAs.txt and packages.txt files. If PPA.txt after execution is empty, get the PPAs from PPAs_backup.txt and copy them over to PPAs.txt. Then execute the script again and Skip the first part.
 
 ## Notable features
 - Installs apps from a variable, user decided list
