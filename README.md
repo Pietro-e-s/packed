@@ -10,7 +10,7 @@ If you are interested in a donation, follow the link in my bio or the one below 
 
 https://buymeacoffee.com/pietroes
 
-**ISO FILES ARE TEMPORARILY UNAVAILABLE!!**
+**EDIT: ISO FILES IS NOW AVAILABLE!!**
 
 ---------------------
 
