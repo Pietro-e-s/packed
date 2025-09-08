@@ -58,3 +58,7 @@ Script tested with Ubuntu 24.04.3 LTS x86_64
 + Type cd Desktop (where "Desktop" needs to be in the language of the file system)
 + Type ./second-script-free to run the second script free version
 + Type ./second-script-donation to run the second script donation version
+
+## Repo info
+[![Stargazers repo roster for @Pietro-e-s/packed](https://reporoster.com/stars/dark/Pietro-e-s/packed)](https://github.com/Pietro-e-s/packed/stargazers)
+[![Forkers repo roster for @Pietro-e-s/packed](https://reporoster.com/forks/dark/Pietro-e-s/packed)](https://github.com/Pietro-e-s/packed/network/members)
