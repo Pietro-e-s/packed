@@ -16,24 +16,43 @@ IMPORTANT NOTE: the code in this GitHub page, the extra function and the ISO are
 Script tested with Ubuntu 24.04.3 LTS x86_64
 
 ## Notable features
-Installs apps from a variable, user decided list.
-Installs packages from a variable, user decided list.
-Adds PPAs from a variable, user decided list.
-Installs the most used extensions for quick personalization
-Heavy automization of tasks.
+- Installs apps from a variable, user decided list.
+- Installs packages from a variable, user decided list.
+- Adds PPAs from a variable, user decided list.
+- Installs the most used extensions for quick personalization
+- Heavy automization of tasks.
 
 ## How to run
-+Move pakced-free or packed-donation to the Desktop
-+Get all the files out of the folder packed-free (/packed-donation) to the Desktop
-+Edit the .txt files (there are 2 backup files)
-+Give execution permissions to the scripts
-+Execute the scripts.
++ Download the files of this repo
++ Get all the files out of the folder packed-free (/packed-donation) to the Desktop
++ Edit the .txt files (there are 2 backup files)
++ Open the Terminal
++ Type cd Desktop (where "Desktop" needs to be in the language of the file system)
++ Type ./post-install-script-free to run the free version
++ Type ./post-install-script-donation to run the donation version
++ On reboot, open terminal
++ Type cd Desktop (where "Desktop" needs to be in the language of the file system)
++ Type ./second-script-free to run the second script free version
++ Type ./second-script-donation to run the second script donation version
 
 
 ## ISO images-how to run
-+Install Ubuntu
-?  The folders containing all of the files are in the root.
-+Move them to the Desktop
-+Get all the files out of the folder packed-free (/packed-donation) to the Desktop
-+Edit the .txt files (there are 2 backup files)
-+Execute the scripts.
++ Download Packed_complete_ubuntu-24.04.3-2025.09.08-desktop-amd64 from drive and the checksum file
++ Install Packed_complete_ubuntu-24.04.3-2025.09.08-desktop-amd64
+**? The folders containing all of the files are in the root**
++ Open terminal
++ Type sudo -i
++ Type your password
++ Type cp -r /root/packed-donation /home/test/Desktop (where "test" is the user and Desktop needs to be in the language of the file system)
++ Type cp -r /root/packed-free /home/test/Desktop (where "test" is the user and "Desktop" needs to be in the language of the file system)
++ Type exit
++ Get all the files out of the folder packed-free (/packed-donation) to the Desktop
++ Edit the .txt files (there are 2 backup files)
++ Open the Terminal (if not already open)
++ Type cd Desktop (where "Desktop" needs to be in the language of the file system)
++ Type ./post-install-script-free to run the free version
++ Type ./post-install-script-donation to run the donation version
++ On reboot, open terminal
++ Type cd Desktop (where "Desktop" needs to be in the language of the file system)
++ Type ./second-script-free to run the second script free version
++ Type ./second-script-donation to run the second script donation version
