@@ -29,7 +29,7 @@ Script tested with Ubuntu 24.04.3 LTS x86_64
 ## Example programs
 - kdeconnect
 - libreoffice
-- gimp gegl libgexiv2-2
+- gimp gegl libgexiv2-2 (may not work)
 - blender
 - gnome-shell-extension-manager
 - quickemu
