@@ -28,33 +28,33 @@ Script tested with Ubuntu 24.04.3 LTS x86_64
 
 ## Example programs
 - kdeconnect
--libreoffice
--gimp gegl libgexiv2-2
--blender
--gnome-shell-extension-manager
--quickemu
--quickgui
--vlc
--thunderbird
--wine
--winetricks
--waydroid
--waydroid-helper
--audacity
--obs-studio
--vim
--cheese
--brasero
+- libreoffice
+- gimp gegl libgexiv2-2
+- blender
+- gnome-shell-extension-manager
+- quickemu
+- quickgui
+- vlc
+- thunderbird
+- wine
+- winetricks
+- waydroid
+- waydroid-helper
+- audacity
+- obs-studio
+- vim
+- cheese
+- brasero
 
 ## Example PPAs relative to above programs
--ppa:ubuntuhandbook1/gimp
--ppa:flexiondotorg/quickemu
--ppa:ubuntuhandbook1/vlc
--ppa:ubuntu-mozilla-security/ppa
--ppa:ubuntu-wine/ppa
+- ppa:ubuntuhandbook1/gimp
+- ppa:flexiondotorg/quickemu
+- ppa:ubuntuhandbook1/vlc
+- ppa:ubuntu-mozilla-security/ppa
+- ppa:ubuntu-wine/ppa
 **? Waydroid is integrated in the code**
--ppa:ichigo666/ppa
--ppa:obsproject/obs-studio
+- ppa:ichigo666/ppa
+- ppa:obsproject/obs-studio
 
 ## power settings
 - critical_battery shutdown
@@ -67,17 +67,17 @@ Script tested with Ubuntu 24.04.3 LTS x86_64
 - power interactive
 
 ## Example extensions
--'https://extensions.gnome.org/extension/3193/blur-my-shell/'
--'https://extensions.gnome.org/extension/7266/lilypad/'
--'https://extensions.gnome.org/extension/4679/burn-my-windows/'
--'https://extensions.gnome.org/extension/4839/clipboard-history/'
--'https://extensions.gnome.org/extension/3740/compiz-alike-magic-lamp-effect/'
--'https://extensions.gnome.org/extension/3210/compiz-windows-effect/'
--'https://extensions.gnome.org/extension/307/dash-to-dock/'
--'https://extensions.gnome.org/extension/4648/desktop-cube/'
--'https://extensions.gnome.org/extension/7083/pin-it/'
--'https://extensions.gnome.org/extension/1634/resource-monitor/'
--'https://extensions.gnome.org/extension/6784/wiggle/'
+- https://extensions.gnome.org/extension/3193/blur-my-shell/
+- https://extensions.gnome.org/extension/7266/lilypad/
+- https://extensions.gnome.org/extension/4679/burn-my-windows/
+- https://extensions.gnome.org/extension/4839/clipboard-history/
+- https://extensions.gnome.org/extension/3740/compiz-alike-magic-lamp-effect/
+- https://extensions.gnome.org/extension/3210/compiz-windows-effect/
+- https://extensions.gnome.org/extension/307/dash-to-dock/
+- https://extensions.gnome.org/extension/4648/desktop-cube/
+- https://extensions.gnome.org/extension/7083/pin-it/
+- https://extensions.gnome.org/extension/1634/resource-monitor/
+- https://extensions.gnome.org/extension/6784/wiggle/
 
 
 ## How to run
