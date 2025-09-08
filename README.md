@@ -15,6 +15,12 @@ IMPORTANT NOTE: the code in this GitHub page, the extra function and the ISO are
 
 Script tested with Ubuntu 24.04.3 LTS x86_64
 
+## Notable features
+Installs apps from a variable, user decided list.
+Installs packages from a variable, user decided list.
+Adds PPAs from a variable, user decided list.
+Installs the most used extensions for quick personalization
+Heavy automization of tasks.
 
 ## How to run
 +Move pakced-free or packed-donation to the Desktop
@@ -26,7 +32,7 @@ Script tested with Ubuntu 24.04.3 LTS x86_64
 
 ## ISO images-how to run
 +Install Ubuntu
-The folders containing all of the files are in the root.
+?  The folders containing all of the files are in the root.
 +Move them to the Desktop
 +Get all the files out of the folder packed-free (/packed-donation) to the Desktop
 +Edit the .txt files (there are 2 backup files)
